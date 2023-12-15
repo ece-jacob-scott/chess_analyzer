@@ -13,7 +13,7 @@
   {% endif %}
   <link
     rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐢</text></svg>"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♕</text></svg>"
   />
 
   <body class="font-sans h-full m-0 p-0">
@@ -23,21 +23,13 @@
           href="/"
           class="hover:text-brand-600 hover:underline hover:decoration-brand-900"
         >
-          {{PROJECT_NAME}}
+          Jacob's Chess Analyzer
         </a>
       </p>
 
       <div class="grow"></div>
-      <div class="mr-2">
-        <a
-          href="/"
-          class="hover:text-brand-600 hover:underline hover:decoration-brand-900 uppercase"
-        >
-          page
-        </a>
-      </div>
 
-      {% if config["HAS_AUTH"] %}
+      {% if config["HAS_AUTH"] == "true" %}
       <div id="auth-links" class="flex flex-row items-center gap-2">
         <button
           class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -83,7 +75,7 @@
     <script src="https://unpkg.com/hyperscript.org@0.9.8"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
 
-    {% if config["HAS_AUTH"] %}
+    {% if config["HAS_AUTH"] == "true" %}
     <script>
       const frontend_api = "{{ config['CLERK_FRONTEND_KEY'] }}";
 

@@ -1,27 +1,23 @@
-PROJECT_NAME={{PROJECT_NAME}}
-SOURCE_FILES={{PROJECT_NAME}}/*.py
+PROJECT_NAME=chess_analyzer
+SOURCE_FILES=chess_analyzer/*.py
 
-.PHONY: build
-build: $(SOURCE_FILES)
-	@npm run build-tailwind
-	@echo "built!"
+# .PHONY: build
+# build: $(SOURCE_FILES)
+# 	@npm run build-tailwind
+# 	@echo "built!"
 
 .PHONY: create_database
 create_database:
 	@echo "Creating database..."
-	flask --app {{PROJECT_NAME}} create_database
+	flask --app chess_analyzer create_database
 
 .PHONY: run
-run: build create_database
-	flask --app {{PROJECT_NAME}} run
+run: create_database
+	flask --app chess_analyzer run
 
 .PHONY: dev
-dev: build create_database
-	flask --app {{PROJECT_NAME}} run --debug
-
-.PHONY: deploy
-deploy: build
-	fly deploy
+dev: create_database
+	flask --app chess_analyzer run --debug
 
 .PHONY: localtunnel
 localtunnel:

@@ -1,0 +1,29 @@
+<div class="col-span-2 bg-slate-200 text-slate-900 p-2 rounded-lg">
+  {% for game in games %}
+  <!--prettier-ignore-->
+  {% if game.id != current_game %}
+  <button
+    hx-get="/game/{{ game.id }}"
+    hx-target="#main_screen"
+    hx-swap="outerHTML"
+    hx-select="#main_screen"
+    class="w-full bg-slate-100 p-2 rounded-lg hover:bg-slate-300"
+  >
+    {{ game.name }}
+  </button>
+  {% else %}
+  <button class="w-full bg-green-200 p-2 rounded-lg">{{ game.name }}</button>
+  {% endif %}
+  <div class="p-1"></div>
+  {% endfor %}
+
+  <button
+    hx-get="/pgn/create"
+    hx-swap="outerHTML"
+    hx-target="#game_board"
+    hx-select="#pgn_form"
+    class="w-full bg-slate-400 text-white font-bold p-2 rounded-lg hover:bg-slate-700"
+  >
+    + New Game
+  </button>
+</div>

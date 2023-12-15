@@ -1,11 +1,11 @@
 {
-  "name": "{{PROJECT_NAME}}",
+  "name": "chess_analyzer",
   "version": "0.0.1",
   "private": true,
-  "description": "Server application for {{PROJECT_NAME}}",
+  "description": "Server application for chess_analyzer",
   "type": "module",
   "scripts": {
-    "build-tailwind": "tailwind -c ./configs/tailwind/tailwind.config.js -i ./configs/tailwind/input.css -o ./{{PROJECT_NAME}}/static/output.css"
+    "build-tailwind": "tailwind -c ./configs/tailwind/tailwind.config.js -i ./configs/tailwind/input.css -o ./chess_analyzer/static/output.css"
   },
   "author": "",
   "license": "ISC",

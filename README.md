@@ -1,6 +1,6 @@
-# {{PROJECT_NAME}}
+# chess_analyzer
 
-Welcome to the {{PROJECT_NAME}}!
+Welcome to the chess_analyzer!
 
 ## Setup
 

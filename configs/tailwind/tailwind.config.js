@@ -2,9 +2,9 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
-    "./{{PROJECT_NAME}}/templates/**/*.html.*",
-    "./{{PROJECT_NAME}}/templates/**/*.html",
-    "./{{PROJECT_NAME}}/templates/*.html",
+    "./chess_analyzer/templates/**/*.html.*",
+    "./chess_analyzer/templates/**/*.html",
+    "./chess_analyzer/templates/*.html",
   ],
   theme: {
     extend: {},

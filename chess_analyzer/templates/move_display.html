@@ -1,0 +1,28 @@
+<div class="col-span-2 col-start-11 bg-slate-200 rounded-lg p-2">
+  <div class="grid grid-cols-5">
+    <!--prettier-ignore-->
+    {% set count = namespace(value=1) %}
+    {% for move in moves %}
+    {% if loop.index is odd %}
+    <div class="col-span-1 mx-auto w-full">{{ count.value }}.</div>
+    {% if current_move == loop.index %}
+    <div class="col-span-2 mx-auto w-full text-center bg-green-200">
+      {{ move }}
+    </div>
+    {% else %}
+    <div class="col-span-2 mx-auto w-full text-center">{{ move }}</div>
+    {% endif %} {% else %} {% if current_move == loop.index %}
+    <div class="col-span-2 col-start-4 mx-auto w-full text-center bg-green-200">
+      {{ move }}
+    </div>
+    {% else %}
+    <div class="col-span-2 col-start-4 mx-auto w-full text-center">
+      {{ move }}
+    </div>
+    {% endif %}
+    <!--prettier-ignore-->
+    {% set count.value = count.value + 1 %}
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
